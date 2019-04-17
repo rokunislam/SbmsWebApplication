@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> @ViewBag.Title- Small Business Management ASP.NET Application</title>
+    <link href="~/Content/Css.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @RenderSection("Style",false)
+</head>
+<body>
+    <div class="col-md-10 offset-1 ">
+        <div class=" card body">
+            <div class=" card-header header">
+                <h2>Small Business Management System</h2>
+            </div>
+            <div class=" card-body">
+                @RenderBody()
+            </div>
+            <div class=" card-footer footer">
+                <h2><marquee> Develop by Rokun Islam</marquee></h2>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+@RenderSection("Script",false)
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@model SbmsWebApplication.Models.Category
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<h1>Update Category</h1>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="panel-group">
+        <div class="panel panel-success">
+            <div class="panel-body">
+                <div class="form-group row">
+                    @Html.Label("Name", "Category Name", new {@class = "control-label col-md-4"})
+                    <div class="col-md-4">
+                        @Html.TextBox("Name", null, new {@class = "form-control"})
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    @Html.Label("Code", "Category Code", new {@class = "control-label col-md-4"})
+                    <div class="col-md-4">
+                        @Html.TextBox("Code", null, new {@class = "form-control"})
+                    </div>
+                </div>
+                <div class="col-md-4 pull-right col-md-offset-4">
+                    <input type="submit" class="btn btn-success" value="Update"/>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+

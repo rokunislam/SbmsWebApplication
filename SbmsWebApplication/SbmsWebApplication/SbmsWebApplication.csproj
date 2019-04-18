@@ -134,10 +134,13 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\CategoryManager.cs" />
+    <Compile Include="BLL\CustomerManager.cs" />
     <Compile Include="BLL\ProductManager.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DAL\CategoryRepository.cs" />
+    <Compile Include="DAL\CustomerRepository.cs" />
     <Compile Include="DAL\ProductRepository.cs" />
     <Compile Include="DatabaseContext\SbmsDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -159,9 +162,15 @@
     <Compile Include="Migrations\201904171505120_Required_New.Designer.cs">
       <DependentUpon>201904171505120_Required_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904181127504_Customer_New_Supplier_New.cs" />
+    <Compile Include="Migrations\201904181127504_Customer_New_Supplier_New.Designer.cs">
+      <DependentUpon>201904181127504_Customer_New_Supplier_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Supplier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +192,8 @@
     <Content Include="Views\Product\Add.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Customer\Add.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -205,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904171505120_Required_New.resx">
       <DependentUpon>201904171505120_Required_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904181127504_Customer_New_Supplier_New.resx">
+      <DependentUpon>201904181127504_Customer_New_Supplier_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

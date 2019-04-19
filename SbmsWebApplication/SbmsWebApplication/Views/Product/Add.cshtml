@@ -15,6 +15,7 @@
                     @Html.Label("Name", "Product Name", new { @class = "control-label col-md-4" })
                     <div class="col-md-4">
                         @Html.TextBox("Name", null, new { @class = "form-control" })
+                        @Html.ValidationMessage("Name")
                     </div>
                 </div>
 
@@ -23,12 +24,14 @@
                     @Html.Label("Code", "Product Code", new { @class = "control-label col-md-4" })
                     <div class="col-md-4">
                         @Html.TextBox("Code", null, new { @class = "form-control" })
+                        @Html.ValidationMessage("Code")
                     </div>
                 </div>
                 <div class="form-group row">
                     @Html.Label("Category", "Product Category", new { @class = "control-label col-md-4" })
                     <div class="col-md-4">
                         @Html.TextBox("CategoryId", null, new { @class = "form-control" })
+                        @Html.ValidationMessage("CategoryId")
                     </div>
                 </div>
                 <div class="form-group row">

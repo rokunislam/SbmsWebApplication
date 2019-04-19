@@ -1,4 +1,4 @@
-﻿@model List<SbmsWebApplication.Models.Product>
+﻿@model SbmsWebApplication.Models.Product
 @{
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
@@ -30,8 +30,8 @@
                 <div class="form-group row">
                     @Html.Label("Category", "Product Category", new { @class = "control-label col-md-4" })
                     <div class="col-md-4">
-                        @Html.TextBox("CategoryId", null, new { @class = "form-control" })
-                        @Html.ValidationMessage("CategoryId")
+                        @Html.DropDownListFor(c=>c.CategoryName,Model.CategoryLookUp,new { @class = "form-control" })
+                        @Html.ValidationMessage("CategoryName")
                     </div>
                 </div>
                 <div class="form-group row">
@@ -69,43 +69,47 @@ else if (ViewBag.DMsg != null)
     <p style="color: red; font-weight: bolder">@(ViewBag.DMsg)</p>
 }
 
-<div class="row">
-    <div class="col-md-8 offset-2">
+@*
 
-        <h2>Product List</h2>
-        <table class="table table-bordered ">
 
-            <tr>
-                <th>Sl</th>
-                <th>Name</th>
-                <th>Code</th>
-                <th>Category</th>
-                <th>ReorderLevel</th>
-                <th>Description</th>
-                <th>Action</th>
-            </tr>
-            @{ int i = 1; }
+    <div class="row">
+        <div class="col-md-8 offset-2">
 
-            @foreach (var data in Model)
-            {
+            <h2>Product List</h2>
+            <table class="table table-bordered ">
+
                 <tr>
-                    <td>
-                        <label>@i</label>
-                        @{ i++; }
-                    </td>
-                    <td>@data.Name</td>
-                    <td>@data.Code</td>
-                    <td>@data.CategoryId</td>
-                    <td>@data.ReorderLevel</td>
-                    <td>@data.Description</td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", "Product", new { id = data.Id }, new { @target = "_blank", @class = "btn btn-default btn-sm" })
-                        @Html.ActionLink("Delete", "Delete", "Product", new { id = data.Id }, new { @class = "btn btn-danger btn-sm" })
-                    </td>
+                    <th>Sl</th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Category</th>
+                    <th>ReorderLevel</th>
+                    <th>Description</th>
+                    <th>Action</th>
                 </tr>
-            }
-        </table>
+                @{ int i = 1; }
 
+                @foreach (var data in Model)
+                {
+                    <tr>
+                        <td>
+                            <label>@i</label>
+                            @{ i++; }
+                        </td>
+                        <td>@data.Name</td>
+                        <td>@data.Code</td>
+                        <td>@data.CategoryId</td>
+                        <td>@data.ReorderLevel</td>
+                        <td>@data.Description</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Product", new { id = data.Id }, new { @target = "_blank", @class = "btn btn-default btn-sm" })
+                            @Html.ActionLink("Delete", "Delete", "Product", new { id = data.Id }, new { @class = "btn btn-danger btn-sm" })
+                        </td>
+                    </tr>
+                }
+            </table>
+
+        </div>
     </div>
-</div>
 
+*@

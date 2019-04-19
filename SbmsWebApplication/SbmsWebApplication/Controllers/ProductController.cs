@@ -11,13 +11,14 @@ namespace SbmsWebApplication.Controllers
     public class ProductController : Controller
     {
         ProductManager _productManager = new ProductManager();
-
+        Product product= new Product();
 
         [HttpGet]
         public ActionResult Add()
         {
-            var datalist = _productManager.GetAll();
-            return View(datalist);
+            var product = new Product();
+            product.CategoryLookUp = _productManager.GetCategorySelectListItems();
+            return View(product);
         }
 
         [HttpPost]

@@ -11,6 +11,9 @@ namespace SbmsWebApplication.Models
         public int Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
+
+        [NotMapped]
+        public List<Category> Categories { get; set; }
        
     }
 }

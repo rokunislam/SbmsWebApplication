@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using SbmsWebApplication.DAL;
 using SbmsWebApplication.Models;
 
@@ -37,6 +38,11 @@ namespace SbmsWebApplication.BLL
         {
             var isDelete = _productRepository.Delete(product);
             return isDelete;
+        }
+
+        public List<SelectListItem> GetCategorySelectListItems()
+        {
+            return _productRepository.GetCategorySelectListItems();
         }
     }
 }

@@ -95,6 +95,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Category\CategoryAdd.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
@@ -171,6 +172,10 @@
     <Compile Include="Migrations\201904181127504_Customer_New_Supplier_New.Designer.cs">
       <DependentUpon>201904181127504_Customer_New_Supplier_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904191639373_lookup_Add_New.cs" />
+    <Compile Include="Migrations\201904191639373_lookup_Add_New.Designer.cs">
+      <DependentUpon>201904191639373_lookup_Add_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -224,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904181127504_Customer_New_Supplier_New.resx">
       <DependentUpon>201904181127504_Customer_New_Supplier_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904191639373_lookup_Add_New.resx">
+      <DependentUpon>201904191639373_lookup_Add_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

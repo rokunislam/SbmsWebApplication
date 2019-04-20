@@ -18,32 +18,43 @@ namespace SbmsWebApplication.Controllers
         {
             var product = new Product();
             product.CategoryLookUp = _productManager.GetCategorySelectListItems();
+            
             return View(product);
         }
 
+        
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Add(Product product)
         {
+            product.CategoryLookUp = _productManager.GetCategorySelectListItems();
             try
             {
-                var IsAdd = _productManager.Add(product);
-
-                if (IsAdd)
+                if (ModelState.IsValid)
                 {
-                    ViewBag.Smsg = " Save Successfully";
+                    var IsAdd = _productManager.Add(product);
 
+                    if (IsAdd)
+                    {
+                        ViewBag.Smsg = " Save Successfully";
+
+                    }
+                    else
+                    {
+                        ViewBag.Fmsg = "Category Not Saved";
+                    }
                 }
-                else
-                {
-                    ViewBag.Fmsg = "Category Not Saved";
-                }
-                return View(_productManager.GetAll());
+                
+                 _productManager.GetAll();
+                return View(product);
+
             }
             catch (Exception e)
             {
                 ViewBag.Fmsg = e.Message;
             }
-            return View(_productManager.GetAll());
+            _productManager.GetAll();
+            return View(product);
         }
 
         public ActionResult Edit(int id)

@@ -1,11 +1,13 @@
 ﻿@model SbmsWebApplication.Models.Product
+
 @{
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
 
 <h1>Add Products</h1>
-@using (Html.BeginForm())
+
+@using (Html.BeginForm(Html.BeginForm("Add", "Product", FormMethod.Post, new { enctype = "multipart/form-data" })))
 {
     @Html.AntiForgeryToken()
     <div class="panel-group">
@@ -15,7 +17,7 @@
                     @Html.Label("Name", "Product Name", new { @class = "control-label col-md-4" })
                     <div class="col-md-4">
                         @Html.TextBox("Name", null, new { @class = "form-control" })
-                        @Html.ValidationMessage("Name")
+                    
                     </div>
                 </div>
 
@@ -24,14 +26,14 @@
                     @Html.Label("Code", "Product Code", new { @class = "control-label col-md-4" })
                     <div class="col-md-4">
                         @Html.TextBox("Code", null, new { @class = "form-control" })
-                        @Html.ValidationMessage("Code")
+                     
                     </div>
                 </div>
                 <div class="form-group row">
                     @Html.Label("Category", "Product Category", new { @class = "control-label col-md-4" })
                     <div class="col-md-4">
-                        @Html.DropDownListFor(c=>c.CategoryName,Model.CategoryLookUp,new { @class = "form-control" })
-                        @Html.ValidationMessage("CategoryName")
+                   
+                        @Html.DropDownListFor(c => c.CategoryName, Model.CategoryLookUp,null, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="form-group row">
@@ -69,9 +71,9 @@ else if (ViewBag.DMsg != null)
     <p style="color: red; font-weight: bolder">@(ViewBag.DMsg)</p>
 }
 
+
+
 @*
-
-
     <div class="row">
         <div class="col-md-8 offset-2">
 
@@ -87,7 +89,9 @@ else if (ViewBag.DMsg != null)
                     <th>Description</th>
                     <th>Action</th>
                 </tr>
+
                 @{ int i = 1; }
+
 
                 @foreach (var data in Model)
                 {
@@ -98,12 +102,12 @@ else if (ViewBag.DMsg != null)
                         </td>
                         <td>@data.Name</td>
                         <td>@data.Code</td>
-                        <td>@data.CategoryId</td>
+                        <td>@data.CategoryName</td>
                         <td>@data.ReorderLevel</td>
                         <td>@data.Description</td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", "Product", new { id = data.Id }, new { @target = "_blank", @class = "btn btn-default btn-sm" })
-                            @Html.ActionLink("Delete", "Delete", "Product", new { id = data.Id }, new { @class = "btn btn-danger btn-sm" })
+                            @Html.ActionLink("Edit", "Edit", "Product", new {id = data.Id}, new {@target = "_blank", @class = "btn btn-default btn-sm"})
+                            @Html.ActionLink("Delete", "Delete", "Product", new {id = data.Id}, new {@class = "btn btn-danger btn-sm"})
                         </td>
                     </tr>
                 }
@@ -111,5 +115,5 @@ else if (ViewBag.DMsg != null)
 
         </div>
     </div>
-
 *@
+

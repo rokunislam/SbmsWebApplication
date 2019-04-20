@@ -13,6 +13,7 @@ namespace SbmsWebApplication.BLL
         ProductRepository _productRepository= new ProductRepository();
         public bool Add(Product product)
         {
+            product.CategoryLookUp = _productRepository.GetCategorySelectListItems();
             bool isAdd = _productRepository.Add(product);
             return isAdd;
         }

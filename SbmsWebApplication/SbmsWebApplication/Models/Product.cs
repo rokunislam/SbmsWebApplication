@@ -12,22 +12,14 @@ namespace SbmsWebApplication.Models
     public class Product 
     {
        
-        public int Id { get; set; }
-  
-        [Required]
-        public string Code { get; set; }
-        [Required]
-        public string Name { get; set; }
-        [Required]
-        public string CategoryName { get; set; }
-     
-        public int ReorderLevel { get; set; }
-     
+        public int Id { get; set; } 
+        public string Code { get; set; }      
+        public string Name { get; set; }        
+        public string CategoryName { get; set; }     
+        public int ReorderLevel { get; set; }     
         public string Description { get; set; }
-
         [NotMapped]
         public List<SelectListItem> CategoryLookUp { get; set; }
-
         [NotMapped]
         public List<Product> Products { get; set; }
 

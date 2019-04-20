@@ -176,6 +176,14 @@
     <Compile Include="Migrations\201904191639373_lookup_Add_New.Designer.cs">
       <DependentUpon>201904191639373_lookup_Add_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904200236131_Deltel_Required_From_CategoryName_In_Product.cs" />
+    <Compile Include="Migrations\201904200236131_Deltel_Required_From_CategoryName_In_Product.Designer.cs">
+      <DependentUpon>201904200236131_Deltel_Required_From_CategoryName_In_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904200244207_Remove_Require_All.cs" />
+    <Compile Include="Migrations\201904200244207_Remove_Require_All.Designer.cs">
+      <DependentUpon>201904200244207_Remove_Require_All.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -232,6 +240,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904191639373_lookup_Add_New.resx">
       <DependentUpon>201904191639373_lookup_Add_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904200236131_Deltel_Required_From_CategoryName_In_Product.resx">
+      <DependentUpon>201904200236131_Deltel_Required_From_CategoryName_In_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904200244207_Remove_Require_All.resx">
+      <DependentUpon>201904200244207_Remove_Require_All.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
